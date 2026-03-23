@@ -1,19 +1,42 @@
-# 📌 LangGraph Persistence — Complete Guide (Interview + Practical Notes)
+# LangGraph Persistence & Multi-Node Workflows - Complete Guide
 
 ---
 
-## 🚀 What is Persistence?
+## 🎯 Overview
 
-**Persistence** means the ability of a system to **save and restore its state of workflow over time**.
+This folder demonstrates **advanced state management** in LangGraph:
+- **Multi-node workflows** (sequential processing steps)
+- **State checkpointing** (saving execution snapshots)
+- **Time travel debugging** (accessing historical states)
+- **Persistent memory** (remembering conversations)
+- **Thread management** (multiple concurrent sessions)
 
-In LangGraph:
+---
 
-* It stores the **state of execution**
-* Allows the system to **resume, remember, and recover**
+## 📚 Core Concepts
 
-👉 In simple terms:
+### 1. **What is Persistence?**
 
-> Persistence = Saving the memory of your AI system
+**Persistence** = Saving and restoring the state of your workflow over time
+
+#### Without Persistence ❌
+```
+Turn 1: User: "Hi, my name is John"
+        Bot: "Nice to meet you, John!"
+        
+Turn 2: User: "What's my name?"
+        Bot: ❌ "I don't know"  (forgot previous context)
+```
+
+#### With Persistence ✅
+```
+Turn 1: User: "Hi, my name is John"
+        Bot: "Nice to meet you, John!"
+        (State SAVED to thread)
+        
+Turn 2: User: "What's my name?"
+        Bot: ✅ "Your name is John" (remembered from previous turn)
+```
 
 ---
 
