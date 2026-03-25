@@ -1,0 +1,2 @@
+1. From here we just added the langsmith API token a(required keys in the .env file )
+so  from now the files are traced by the landsmith and the project details are appear in the lagsmith website 
